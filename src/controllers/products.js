@@ -1,12 +1,5 @@
 import { SuccessResponse, FailureResponse } from "../common.js";
 import _ from "lodash";
-// import {
-//   addProduct,
-//   getProducts,
-//   updateProduct,
-//   getProductbyId,
-//   deleteProduct,
-// } from "../services.js";
 import pro from "../services.js";
 
 export const addProductController = async (req, res) => {

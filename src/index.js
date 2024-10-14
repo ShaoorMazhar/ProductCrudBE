@@ -1,5 +1,6 @@
 import Express from "express";
 import productRoutes from "./routes/products.js";
+import userRoutes from "./routes/users.js";
 import { connectToDB } from "./models/db.js";
 
 const app = Express();
@@ -9,6 +10,7 @@ const startServer = async () => {
   try {
     connectToDB();
     app.use("/", productRoutes);
+    app.use("/user", userRoutes);
     app.listen(3000, () => {
       console.log("Server is listening on localhost:3000");
     });

@@ -7,7 +7,6 @@ export const addProductController = async (req, res) => {
     const newProduct = await pro.addProduct(req);
     res.json(SuccessResponse("Product added successfully", 200, newProduct));
   } catch (error) {
-    console.log(error);
     res.status(500).json(FailureResponse("Product not addedd", 500));
   }
 };

@@ -18,3 +18,18 @@ export const productSchema = () =>
     title: Joi.string().required(),
     amount: Joi.number().strict().required(),
   });
+
+export const registerUserSchema = () => {
+  return Joi.object({
+    userName: Joi.string().required(),
+    email: Joi.string().email(),
+    password: Joi.string().pattern(new RegExp("^[a-zA-Z0-9]{3,30}$")),
+  });
+};
+
+export const signInUserSchema = () => {
+  return Joi.object({
+    email: Joi.string().email(),
+    password: Joi.string(),
+  });
+};
